@@ -1,8 +1,10 @@
 # TinyGW: An Rust Example of a Brigade Gateway
 
+This is a sample [Brigade](https://brigade.sh) gateway written in Rust. It triggers a Brigade `interval` event every 5 minutes. The repository also contains some samples you can use for testing this gateway.
+
 ## Using This Repo
 
-Assuming you have Brigade installed and configured, you can use this demo as follows:
+Assuming you have Brigade installed and configured on a Kubernetes cluster to which you have access, you can use this demo as follows:
 
 1. Clone this repo
 2. Install the project: `kubectl create -f project.yaml`
