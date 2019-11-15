@@ -10,6 +10,7 @@ use kube::{
 };
 
 fn main() -> Result<(), failure::Error> {
+    println!("Starting service");
     let kubeconfig = config::load_kube_config()
         .or_else(|_| config::incluster_config())
         .expect("kubeconfig failed to load");
@@ -18,6 +19,7 @@ fn main() -> Result<(), failure::Error> {
     let project = std::env::var("PROJECT").expect("PROJECT env var is required");
     let sleep_time = std::time::Duration::from_secs(60 * 5);
 
+    println!("Begining service loop");
     loop {
         std::thread::sleep(sleep_time);
         println!("Generating event");

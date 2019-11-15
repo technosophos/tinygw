@@ -21,4 +21,12 @@ The Brigade script is stored in the `project.yaml`. When you edit it, you will n
 
 Edit the code in `main.rs` and then re-run `cargo run`
 
-If you want to run the gateway inside of your cluster, you will need to package up the controller in a Docker container and then execute it in a deployment. For an example of how to do this, take a look at [Buck](https://github.com/brigadecore/buck).
+## The TinyGW Helm Chart
+
+If you want to run the gateway inside of your cluster, you can `make build`, which will build and push the Docker image, and then install it via the Helm 3 chart.
+
+```console
+$ export TAG=myrepo/tinygw:latest
+$ make build
+$ helm install tinygw ./charts/tinygw --set image.repository=$TAG
+```
