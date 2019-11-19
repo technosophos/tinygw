@@ -46,7 +46,8 @@ fn generate_secret(project: &str) -> serde_json::Value {
             "labels": {
                 "project": project,
                 "build": uid.as_str(),
-                "component": "build"
+                "component": "build",
+                "heritage": "brigade"
             }
         },
         "type": "brigade.sh/build",
