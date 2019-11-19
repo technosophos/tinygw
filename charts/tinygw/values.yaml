@@ -7,7 +7,7 @@ enableRBAC: true
 replicaCount: 1
 
 image:
-  repository: technosophos/tinygw:latest
+  repository: krancour/tinygw:latest
   pullPolicy: Always
 
 imagePullSecrets: []
