@@ -11,11 +11,16 @@ metadata:
   name: brigade-3fe1406a8254afd471de2bdd53483501f947004cd3d174e6a60764
 stringData:
   defaultScript: |
-    const { events } = require("brigadier");
+    const { events, Job } = require('brigadier');
 
     events.on("interval", (e, p) => {
-        console.log("Triggered by 'interval' event.")
+      var job = new Job('hello-world', 'alpine:3.8');
+      job.tasks = [
+        "echo 'Hello, World!'"
+      ];
+      job.run();
     });
+
 data:
   allowHostMounts: ZmFsc2U=
   allowPrivilegedJobs: ZmFsc2U=
